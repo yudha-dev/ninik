@@ -16,8 +16,6 @@ class Auth extends CI_Controller
         $session = $this->session->userdata('jabatan');
         if ($session == 'admin') {
             redirect('admin/beranda');
-        } elseif ($session == 'gudang') {
-            redirect('gudang/beranda');
         } elseif ($session == 'sales') {
             redirect('sales/beranda');
         }
@@ -28,7 +26,6 @@ class Auth extends CI_Controller
             $data['title'] = 'LOGIN';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/login', $data);
-            $this->load->view('templates/auth_footer');
         } else {
             //validasi sukses
             $this->_login();
