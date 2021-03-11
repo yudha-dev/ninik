@@ -16,15 +16,6 @@ function is_login()
         }
     }
     //
-    function gudang()
-    {
-        $get = get_instance();
-        //jika jabatan tidak sesuai kembalikan ke login
-        if ($get->session->userdata('jabatan') != 'gudang') {
-            redirect('auth');
-        }
-    }
-    //
     function sales()
     {
         $get = get_instance();

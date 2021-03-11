@@ -39,23 +39,21 @@ class Auth extends CI_Controller
         $user = $this->db->get_where('user', ['username' => $username])->row_array();
 
         if ($user) {
-            if ($user['active'] == 1) {
+            if ($user['aktif'] == 1) {
                 //jika user ada 
                 if (password_verify($password, $user['password'])) {
                     $data = [
                         'id_user'     => $user['id_user'],
                         'username'    => $user['username'],
-                        'nama'         => $user['nama'],
+                        'nama'        => $user['nama'],
                         'foto_profil' => $user['foto_profil'],
                         'jabatan'     => $user['jabatan']
                     ];
                     $this->session->set_userdata($data);
-                    if ($this->session->userdata('jabatan') == 'pemilik') {
-                        redirect('pemilik/beranda');
-                    } elseif ($this->session->userdata('jabatan') == 'admin') {
+                    if ($this->session->userdata('jabatan') == 'admin') {
                         redirect('admin/beranda');
-                    } elseif ($this->session->userdata('jabatan') == 'tekhnisi') {
-                        redirect('tekhnisi/beranda');
+                    } elseif ($this->session->userdata('jabatan') == 'sales') {
+                        redirect('sales/beranda');
                     }
                 } else {
                     $this->session->set_flashdata('pass', 'Password salah');
