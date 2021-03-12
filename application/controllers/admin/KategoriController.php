@@ -70,4 +70,29 @@ class KategoriController extends CI_Controller
 
         $this->load->view('admin/templates/index', $data);
     }
+    //update data
+    public function update()
+    {
+        $post = $this->input->post();
+        $id = $post['id'];
+        $validation = $this->form_validation;
+        $validation->set_rules('nama_kategori', 'Nama Kategori', 'required', array('required' => '%s wajib diisi'));
+        if ($validation->run() == false) {
+            return $this->edit($id);
+        } else {
+            $data = array(
+                'nama_kategori'             => $post['nama_kategori']
+            );
+            $this->Kategori->update($data, $id);
+            $this->session->set_flashdata('update', 'Edit data kategori berhasil');
+            redirect(site_url('admin/kategori'));
+        }
+    }
+    //delete data
+    public function delete($id)
+    {
+        $this->Kategori->delete($id);
+        $this->session->set_flashdata('hapus', 'Data kategori berhasil dihapus');
+        redirect(site_url('admin/kategori'));
+    }
 }

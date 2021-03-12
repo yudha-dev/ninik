@@ -28,7 +28,7 @@
                                 <tr>
                                     <td><?= $no++  ?></td>
                                     <td><?= $kat->nama_kategori  ?></td>
-                                    <td><a href="<?= base_url('admin/kategori/edit_kategori/') . $kat->id_kategori ?>" class="btn btn-primary">Edit </a> <a href="" class="btn btn-danger">Hapus</a></td>
+                                    <td><a href="<?= base_url('admin/kategori/edit_kategori/') . $kat->id_kategori ?>" class="btn btn-primary">Edit </a> <a href="<?= base_url('admin/kategori/hapus/') . $kat->id_kategori ?>" class="btn btn-danger">Hapus</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
