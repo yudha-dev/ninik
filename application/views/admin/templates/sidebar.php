@@ -6,6 +6,8 @@
             </li>
             <li><a href="<?php echo site_url('admin/kategori') ?>"><i class="fa fa-th-large"></i> Kategori </a>
             </li>
+            <li><a href="<?php echo site_url('admin/wilayah') ?>"><i class="fa fa-map-marker"></i> Wilayah </a>
+            </li>
             <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="form.html">General Form</a></li>

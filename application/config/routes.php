@@ -52,11 +52,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'auth';
 //admin
 $route['admin/beranda']                            = 'admin/DashboardController/index';
+//kategori
 $route['admin/kategori']                           = 'admin/KategoriController/index';
 $route['admin/kategori/tambah_kategori']           = 'admin/KategoriController/tambahKategori';
 $route['admin/kategori/store']                     = 'admin/KategoriController/store';
 $route['admin/kategori/edit_kategori/(:any)']      = 'admin/KategoriController/edit/$1';
 $route['admin/kategori/update']                    = 'admin/KategoriController/update';
 $route['admin/kategori/hapus/(:any)']              = 'admin/KategoriController/delete/$1';
+//wilayah
+$route['admin/wilayah']                            = 'admin/WilayahController/index';
+$route['admin/wilayah/tambah_wilayah']             = 'admin/WilayahController/tambahWilayah';
+$route['admin/wilayah/store']                      = 'admin/WilayahController/store';
+$route['admin/wilayah/edit_wilayah/(:any)']        = 'admin/WilayahController/edit/$1';
+$route['admin/wilayah/update']                     = 'admin/WilayahController/update';
+$route['admin/wilayah/hapus/(:any)']               = 'admin/WilayahController/delete/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
