@@ -66,6 +66,13 @@ $route['admin/wilayah/store']                      = 'admin/WilayahController/st
 $route['admin/wilayah/edit_wilayah/(:any)']        = 'admin/WilayahController/edit/$1';
 $route['admin/wilayah/update']                     = 'admin/WilayahController/update';
 $route['admin/wilayah/hapus/(:any)']               = 'admin/WilayahController/delete/$1';
+//toko
+$route['admin/toko']                               = 'admin/TokoController/index';
+$route['admin/toko/tambah_toko']                   = 'admin/TokoController/tambahToko';
+$route['admin/toko/store']                         = 'admin/TokoController/store';
+$route['admin/toko/edit_toko/(:any)']              = 'admin/TokoController/edit/$1';
+$route['admin/toko/update']                        = 'admin/TokoController/update';
+$route['admin/toko/hapus/(:any)']                  = 'admin/TokoController/delete/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
