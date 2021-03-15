@@ -50,6 +50,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'auth';
+//logout
+$route['logout']                                   = 'Auth/logout';
 //admin
 $route['admin/beranda']                            = 'admin/DashboardController/index';
 //kategori
@@ -66,6 +68,13 @@ $route['admin/wilayah/store']                      = 'admin/WilayahController/st
 $route['admin/wilayah/edit_wilayah/(:any)']        = 'admin/WilayahController/edit/$1';
 $route['admin/wilayah/update']                     = 'admin/WilayahController/update';
 $route['admin/wilayah/hapus/(:any)']               = 'admin/WilayahController/delete/$1';
+//sales
+$route['admin/sales']                              = 'admin/SalesController/index';
+$route['admin/sales/tambah_sales']                 = 'admin/SalesController/tambahSales';
+$route['admin/sales/store']                        = 'admin/SalesController/store';
+$route['admin/sales/edit_sales/(:any)']            = 'admin/SalesController/edit/$1';
+$route['admin/sales/update']                       = 'admin/SalesController/update';
+$route['admin/sales/hapus/(:any)']                 = 'admin/SalesController/delete/$1';
 //toko
 $route['admin/toko']                               = 'admin/TokoController/index';
 $route['admin/toko/tambah_toko']                   = 'admin/TokoController/tambahToko';
@@ -73,6 +82,9 @@ $route['admin/toko/store']                         = 'admin/TokoController/store
 $route['admin/toko/edit_toko/(:any)']              = 'admin/TokoController/edit/$1';
 $route['admin/toko/update']                        = 'admin/TokoController/update';
 $route['admin/toko/hapus/(:any)']                  = 'admin/TokoController/delete/$1';
+//barang
+$route['admin/barang']                             = 'admin/BarangController/index';
+$route['admin/barang/tambah_barang']               = 'admin/BarangController/tambahBarang';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

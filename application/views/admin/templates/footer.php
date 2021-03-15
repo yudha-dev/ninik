@@ -1,6 +1,6 @@
 <footer>
     <div class="pull-right">
-        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        Mitra Abadi Sejahtera @2021
     </div>
     <div class="clearfix"></div>
 </footer>
