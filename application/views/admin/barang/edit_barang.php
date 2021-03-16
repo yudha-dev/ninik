@@ -7,22 +7,22 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Tambah Barang</small></h2>
+                        <h2>Edit Barang</small></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
                         <br />
-                        <form action="<?= base_url('admin/barang/store') ?>" data-parsley-validate class="form-horizontal form-label-left" method="POST">
+                        <form action="<?= base_url('admin/barang/update') ?>" data-parsley-validate class="form-horizontal form-label-left" method="POST">
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                            <input type="hidden" name="id" value="<?= $barang->id_barang ?>">
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Kategori</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <select name="kategori" class="form-control" required>
-                                        <option value="">-- Pilih Kategori --</option>
-                                        <?php
-                                        foreach ($kategori as $kat) : ?>
+                                        <option value="<?= $barang->id_kategori ?>"><?= $barang->nama_kategori ?></option>
+                                        <?php foreach ($kategori as $kat) : ?>
                                             <option value="<?= $kat->id_kategori ?>"><?= $kat->nama_kategori ?></option>
-                                        <?php endforeach; ?>
+                                        <?php endforeach ?>
                                     </select>
                                 </div>
                             </div>
@@ -30,28 +30,28 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" name="nama_barang" required="required" class="form-control col-md-7 col-xs-12" placeholder="Masukan nama barang">
+                                    <input type="text" name="nama_barang" required="required" class="form-control col-md-7 col-xs-12" value="<?= $barang->nama_barang ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Harga Beli <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" name="harga_beli" id="rupiah" required="required" class="form-control col-md-7 col-xs-12" placeholder="Masukan harga pembelian">
+                                    <input type="text" name="harga_beli" id="rupiah" required="required" class="form-control col-md-7 col-xs-12" value="<?= "Rp. " . number_format($barang->harga_beli, 0, ',', '.') ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Harga Jual <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" name="harga_jual" id="harga" required="required" class="form-control col-md-7 col-xs-12" placeholder="Masukan harga penjualan">
+                                    <input type="text" name="harga_jual" id="harga" required="required" class="form-control col-md-7 col-xs-12" value="<?= "Rp. " . number_format($barang->harga_jual, 0, ',', '.') ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nama_pemilik">Stok Barang <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="number" min="1" name="stock" id="stock" required="required" class="form-control col-md-7 col-xs-12" placeholder="Masukan stock barang">
+                                    <input type="number" min="1" name="stock" id="stock" required="required" class="form-control col-md-7 col-xs-12" value="<?= $barang->stock ?>">
                                 </div>
                             </div>
                             <div class="ln_solid"></div>

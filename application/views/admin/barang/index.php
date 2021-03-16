@@ -31,12 +31,12 @@
                             foreach ($barang as $data) : ?>
                                 <tr>
                                     <td><?= $no++  ?></td>
-                                    <td><?= $data->kategori  ?></td>
+                                    <td><?= $data->nama_kategori  ?></td>
                                     <td><?= $data->nama_barang ?></td>
                                     <td><?= "Rp. " . number_format($data->harga_beli, 0, ',', '.') ?></td>
                                     <td><?= "Rp. " . number_format($data->harga_jual, 0, ',', '.') ?></td>
                                     <td><?= $data->stock ?></td>
-                                    <td><a href="<?= base_url('admin/toko/edit_toko/') . $data->id_barang ?>" class="btn btn-primary">Edit </a> <a href="<?= base_url('admin/toko/hapus/') . $data->id_barang ?>" class="btn btn-danger">Hapus</a></td>
+                                    <td><a href="<?= base_url('admin/barang/edit_barang/') . $data->id_barang ?>" class="btn btn-primary">Edit </a> <a href="<?= base_url('admin/barang/hapus/') . $data->id_barang ?>" class="btn btn-danger">Hapus</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

@@ -85,6 +85,10 @@ $route['admin/toko/hapus/(:any)']                  = 'admin/TokoController/delet
 //barang
 $route['admin/barang']                             = 'admin/BarangController/index';
 $route['admin/barang/tambah_barang']               = 'admin/BarangController/tambahBarang';
+$route['admin/barang/store']                       = 'admin/BarangController/store';
+$route['admin/barang/edit_barang/(:any)']          = 'admin/BarangController/edit/$1';
+$route['admin/barang/update']                      = 'admin/BarangController/update';
+$route['admin/barang/hapus/(:any)']                = 'admin/BarangController/delete/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
