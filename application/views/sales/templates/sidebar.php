@@ -11,6 +11,8 @@
         <ul class="nav side-menu">
             <li><a href="<?php echo site_url('sales/toko') ?>"><i class="fa fa-sitemap"></i> Toko </a>
             </li>
+            <li><a href="<?php echo site_url('sales/transaksi') ?>"><i class="fa fa-sitemap"></i> Transaksi </a>
+            </li>
         </ul>
     </div>
 </div>

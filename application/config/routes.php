@@ -98,6 +98,9 @@ $route['sales/toko/store']                         = 'sales/TokoController/store
 $route['sales/toko/edit_toko/(:any)']              = 'sales/TokoController/edit/$1';
 $route['sales/toko/update']                        = 'sales/TokoController/update';
 $route['sales/toko/hapus/(:any)']                  = 'sales/TokoController/delete/$1';
+//keranjang
+$route['sales/transaksi']                          = 'sales/KeranjangController/index';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
