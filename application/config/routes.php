@@ -52,7 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'auth';
 //logout
 $route['logout']                                   = 'Auth/logout';
-//admin
+//ADMIN MENU
 $route['admin/beranda']                            = 'admin/DashboardController/index';
 //kategori
 $route['admin/kategori']                           = 'admin/KategoriController/index';
@@ -89,8 +89,15 @@ $route['admin/barang/store']                       = 'admin/BarangController/sto
 $route['admin/barang/edit_barang/(:any)']          = 'admin/BarangController/edit/$1';
 $route['admin/barang/update']                      = 'admin/BarangController/update';
 $route['admin/barang/hapus/(:any)']                = 'admin/BarangController/delete/$1';
-//sales
+//SALES MENU
 $route['sales/beranda']                            = 'sales/DashboardController/index';
+//toko
+$route['sales/toko']                               = 'sales/TokoController/index';
+$route['sales/toko/tambah_toko']                   = 'sales/TokoController/tambahToko';
+$route['sales/toko/store']                         = 'sales/TokoController/store';
+$route['sales/toko/edit_toko/(:any)']              = 'sales/TokoController/edit/$1';
+$route['sales/toko/update']                        = 'sales/TokoController/update';
+$route['sales/toko/hapus/(:any)']                  = 'sales/TokoController/delete/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

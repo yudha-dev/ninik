@@ -4,12 +4,22 @@ class Toko extends CI_Model
 {
     private $_table = 'toko';
     //
-    public function getAll()
+    public function getAll($id)
     {
         $this->db->select('*');
         $this->db->join('wilayah', 'toko.id_wilayah = wilayah.id_wilayah');
+        $this->db->join('user', 'toko.id_user = user.id_user');
         $this->db->where(['toko.aktif' => 1]);
-        return $this->db->get($this->_table);
+        return $this->db->get_where($this->_table, ['user.id_user' => $id]);
+    }
+    //
+    public function getByUser($id)
+    {
+        $this->db->select('*');
+        $this->db->join('wilayah', 'toko.id_wilayah = wilayah.id_wilayah');
+        $this->db->join('user', 'toko.id_user = user.id_user');
+        $this->db->where(['toko.aktif' => 1]);
+        return $this->db->get_where($this->_table, ['user.id_user' => $id]);
     }
     //
     public function save($data)

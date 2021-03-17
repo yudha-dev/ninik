@@ -6,5 +6,11 @@
             </li>
         </ul>
     </div>
-
+    <div class="menu_section">
+        <h3>Master Data</h3>
+        <ul class="nav side-menu">
+            <li><a href="<?php echo site_url('sales/toko') ?>"><i class="fa fa-sitemap"></i> Toko </a>
+            </li>
+        </ul>
+    </div>
 </div>
