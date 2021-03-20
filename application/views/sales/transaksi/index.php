@@ -3,21 +3,9 @@
 
         <div class="clearfix"></div>
         <form action="" method="POST">
+            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
             <div class="col-md-7 col-sm-7 col-xs-7">
-                <div class="x_panel">
-                    <div class="form-group">
-                        <h4 class="control-label col-md-3 col-sm-3 col-xs-12">Toko</h4>
-                        <div class="col-md-7 col-sm-7 col-xs-7">
-                            <select name="toko" class="form-control" required>
-                                <option value="">-- Pilih Toko --</option>
-                                <?php
-                                foreach ($toko as $tk) : ?>
-                                    <option value="<?= $tk->id_toko ?>"><?= $tk->nama_toko ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="x_panel">
                     <div class="x_title">
                         <h2>Barang</h2>
@@ -41,6 +29,7 @@
                                 foreach ($barang as $data) : ?>
                                     <tr>
                                         <td><?= $no++  ?></td>
+                                        <input type="hidden" name="id_barang" value="<?= $data->id_barang ?>">
                                         <td><?= $data->nama_barang ?></td>
                                         <td><?= "Rp. " . number_format($data->harga_jual, 0, ',', '.') ?></td>
                                         <td><?= $data->stock ?></td>
@@ -56,7 +45,24 @@
 
             <div class="col-md-5 col-sm-5 col-xs-5">
                 <div class="x_panel">
-                    <label>Keranjang Belanja</label>
+                    <label>List Barang</label>
+                </div>
+                <div class="x_panel text-center">
+                    <div class="form-group">
+                        <h4 class="control-label col-md-3 col-sm-3 col-xs-12">Toko</h4>
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <select name="toko" class="form-control" required>
+                                <option value="">-- Pilih Toko --</option>
+                                <?php
+                                foreach ($toko as $tk) : ?>
+                                    <option value="<?= $tk->id_toko ?>"><?= $tk->nama_toko ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="x_panel text-center">
+                    <button class="btn btn-primary">Selesai</button>
                 </div>
             </div>
         </form>

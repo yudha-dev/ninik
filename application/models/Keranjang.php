@@ -12,4 +12,11 @@ class Keranjang extends CI_Model
         $this->db->join('barang', 'keranjang.id_barang = barang.id_barang');
         return $this->db->get_where($this->_table, ['keranjang.id_user' => $id]);
     }
+    //
+    public function save($data)
+    {
+        //INSERT INTO wilayah
+        $this->db->insert($this->_table, $data);
+        return $this->db->insert_id();
+    }
 }
