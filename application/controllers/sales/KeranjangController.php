@@ -32,4 +32,8 @@ class KeranjangController extends CI_Controller
 
         $this->load->view('sales/templates/index', $data);
     }
+    //
+    public function store()
+    {
+    }
 }
